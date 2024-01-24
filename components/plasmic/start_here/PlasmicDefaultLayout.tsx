@@ -38,12 +38,16 @@ import {
 } from "@plasmicapp/react-web";
 import Nav from "../../Nav"; // plasmic-import: mWZvhL92Ok8N/component
 import Logo from "../../Logo"; // plasmic-import: eqWxOKkmGwmo/component
+import Button from "../../Button"; // plasmic-import: KaXI-_rb8Hbz/component
 import Footer from "../../Footer"; // plasmic-import: -v5Jl9daHi4w/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_start_here.module.css"; // plasmic-import: c8HQ4QDrdFixJwisZHdvQZ/projectcss
 import sty from "./PlasmicDefaultLayout.module.css"; // plasmic-import: A2d7WnFA90Fs/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: Rjr6r3-9QxlW/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: qWMN0DGk7j4M/icon
 
 createPlasmicElementProxy;
 
@@ -53,25 +57,24 @@ type VariantPropType = keyof PlasmicDefaultLayout__VariantsArgs;
 export const PlasmicDefaultLayout__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicDefaultLayout__ArgsType = {
-  brandLogo?: React.ReactNode;
   children?: React.ReactNode;
+  slot?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicDefaultLayout__ArgsType;
 export const PlasmicDefaultLayout__ArgProps = new Array<ArgPropType>(
-  "brandLogo",
-  "children"
+  "children",
+  "slot"
 );
 
 export type PlasmicDefaultLayout__OverridesType = {
   root?: p.Flex<"div">;
-  nav?: p.Flex<typeof Nav>;
   freeBox?: p.Flex<"div">;
   footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultDefaultLayoutProps {
-  brandLogo?: React.ReactNode;
   children?: React.ReactNode;
+  slot?: React.ReactNode;
   className?: string;
 }
 
@@ -121,29 +124,25 @@ function PlasmicDefaultLayout__RenderFunc(props: {
         sty.root
       )}
     >
-      <Nav
-        data-plasmic-name={"nav"}
-        data-plasmic-override={overrides.nav}
-        brandLogo={p.renderPlasmicSlot({
-          defaultContents: (
-            <Logo className={classNames("__wab_instance", sty.logo__iifhz)} />
-          ),
+      {p.renderPlasmicSlot({
+        defaultContents: (
+          <Nav
+            brandLogo={
+              <Logo className={classNames("__wab_instance", sty.logo__tM5F)} />
+            }
+            className={classNames("__wab_instance", sty.nav__nz744)}
+          />
+        ),
 
-          value: args.brandLogo
-        })}
-        className={classNames("__wab_instance", sty.nav)}
-      />
-
+        value: args.slot
+      })}
       <div
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}
         className={classNames(projectcss.all, sty.freeBox)}
       >
         {p.renderPlasmicSlot({
-          defaultContents: (
-            <div className={classNames(projectcss.all, sty.freeBox__m5SEs)} />
-          ),
-
+          defaultContents: null,
           value: args.children
         })}
       </div>
@@ -157,8 +156,7 @@ function PlasmicDefaultLayout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "nav", "freeBox", "footer"],
-  nav: ["nav"],
+  root: ["root", "freeBox", "footer"],
   freeBox: ["freeBox"],
   footer: ["footer"]
 } as const;
@@ -167,7 +165,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  nav: typeof Nav;
   freeBox: "div";
   footer: typeof Footer;
 };
@@ -232,7 +229,6 @@ export const PlasmicDefaultLayout = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    nav: makeNodeComponent("nav"),
     freeBox: makeNodeComponent("freeBox"),
     footer: makeNodeComponent("footer"),
 

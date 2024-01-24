@@ -50,23 +50,32 @@ import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: qWMN0DGk7j4
 
 createPlasmicElementProxy;
 
-export type PlasmicAuth__VariantMembers = {};
-export type PlasmicAuth__VariantsArgs = {};
+export type PlasmicAuth__VariantMembers = {
+  isSignUp: "isSignUp";
+};
+export type PlasmicAuth__VariantsArgs = {
+  isSignUp?: SingleBooleanChoiceArg<"isSignUp">;
+};
 type VariantPropType = keyof PlasmicAuth__VariantsArgs;
-export const PlasmicAuth__VariantProps = new Array<VariantPropType>();
+export const PlasmicAuth__VariantProps = new Array<VariantPropType>("isSignUp");
 
-export type PlasmicAuth__ArgsType = {};
+export type PlasmicAuth__ArgsType = {
+  children?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicAuth__ArgsType;
-export const PlasmicAuth__ArgProps = new Array<ArgPropType>();
+export const PlasmicAuth__ArgProps = new Array<ArgPropType>("children");
 
 export type PlasmicAuth__OverridesType = {
   authForm?: p.Flex<"form">;
   emailInput?: p.Flex<typeof TextInput>;
   passwordInput?: p.Flex<typeof TextInput>;
+  freeBox?: p.Flex<"div">;
   submitButton?: p.Flex<typeof Button>;
 };
 
 export interface DefaultAuthProps {
+  children?: React.ReactNode;
+  isSignUp?: SingleBooleanChoiceArg<"isSignUp">;
   className?: string;
 }
 
@@ -114,6 +123,12 @@ function PlasmicAuth__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "isSignUp",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.isSignUp
       }
     ],
     [$props, $ctx, $refs]
@@ -139,7 +154,8 @@ function PlasmicAuth__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
-        sty.authForm
+        sty.authForm,
+        { [sty.authFormisSignUp]: hasVariant($state, "isSignUp", "isSignUp") }
       )}
     >
       <TextInput
@@ -169,19 +185,42 @@ function PlasmicAuth__RenderFunc(props: {
         }
       />
 
+      <div
+        data-plasmic-name={"freeBox"}
+        data-plasmic-override={overrides.freeBox}
+        className={classNames(projectcss.all, sty.freeBox, {
+          [sty.freeBoxisSignUp]: hasVariant($state, "isSignUp", "isSignUp")
+        })}
+      >
+        {p.renderPlasmicSlot({
+          defaultContents: "Don't have an account? Sign up instead",
+          value: args.children
+        })}
+      </div>
       <Button
         data-plasmic-name={"submitButton"}
         data-plasmic-override={overrides.submitButton}
-        className={classNames("__wab_instance", sty.submitButton)}
-      />
+        className={classNames("__wab_instance", sty.submitButton, {
+          [sty.submitButtonisSignUp]: hasVariant($state, "isSignUp", "isSignUp")
+        })}
+      >
+        {hasVariant($state, "isSignUp", "isSignUp") ? "Signup" : "Login"}
+      </Button>
     </p.Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  authForm: ["authForm", "emailInput", "passwordInput", "submitButton"],
+  authForm: [
+    "authForm",
+    "emailInput",
+    "passwordInput",
+    "freeBox",
+    "submitButton"
+  ],
   emailInput: ["emailInput"],
   passwordInput: ["passwordInput"],
+  freeBox: ["freeBox"],
   submitButton: ["submitButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -191,6 +230,7 @@ type NodeDefaultElementType = {
   authForm: "form";
   emailInput: typeof TextInput;
   passwordInput: typeof TextInput;
+  freeBox: "div";
   submitButton: typeof Button;
 };
 
@@ -256,6 +296,7 @@ export const PlasmicAuth = Object.assign(
     // Helper components rendering sub-elements
     emailInput: makeNodeComponent("emailInput"),
     passwordInput: makeNodeComponent("passwordInput"),
+    freeBox: makeNodeComponent("freeBox"),
     submitButton: makeNodeComponent("submitButton"),
 
     // Metadata about props expected for PlasmicAuth

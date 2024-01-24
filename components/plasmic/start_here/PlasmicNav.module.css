@@ -13,19 +13,33 @@
 }
 .logo__i3Z2:global(.__wab_instance) {
   position: relative;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
 }
-.navigationLinks {
+.freeBox__sJvFu {
   display: flex;
   position: relative;
   flex-direction: row;
-  width: auto;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
   height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.navigationLinks {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: 80px;
   max-width: 100%;
   padding: 8px;
 }
 .navigationLinks > :global(.__wab_flex-container) {
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   justify-content: flex-start;
   margin-left: calc(0px - 16px);
   width: calc(100% + 16px);
@@ -40,15 +54,81 @@
   > img {
   margin-left: 16px;
 }
-.select:global(.__wab_instance) {
+.home:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
-.select2:global(.__wab_instance) {
+.svg__cRcU {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__xc6Hw {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.resources:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
-.select3:global(.__wab_instance) {
+.freeBox__uc6Qp {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 80px;
+  max-width: 100%;
+  padding: 8px;
+}
+.button__fpBfi:global(.__wab_instance) {
+  max-width: 100%;
+}
+.svg__pogUh {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__gHd23 {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.button__u9SpI:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+}
+.svg___4Xxb2 {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__cJ6Us {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.button__fHwgh:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__b5SLg {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__awlIe {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
 }

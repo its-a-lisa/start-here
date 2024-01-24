@@ -5,7 +5,7 @@
   height: 100vh;
   min-width: 0;
 }
-.freeBox__n9QEc {
+.freeBox {
   display: grid;
   position: relative;
   width: 100%;
@@ -23,54 +23,69 @@
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
   padding: 0px;
 }
-.freeBox__n9QEc > * {
+.freeBox > * {
   grid-column: 4;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .freeBox__n9QEc > * {
+  .freeBox > * {
     grid-column: 4;
   }
 }
-.freeBox__lVVgK {
-  display: flex;
+.img {
   position: relative;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
+  object-fit: cover;
   max-width: 100%;
-  min-width: 0;
-  padding: 8px;
 }
-.freeBox__lVVgK > :global(.__wab_flex-container) {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  margin-top: calc(0px - 16px);
-  height: calc(100% + 16px);
+.img > picture > img {
+  object-fit: cover;
 }
-.freeBox__lVVgK > :global(.__wab_flex-container) > *,
-.freeBox__lVVgK > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__lVVgK > :global(.__wab_flex-container) > picture > img,
-.freeBox__lVVgK
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-top: 16px;
-}
-.h1 {
+.logo__u80Iy:global(.__wab_instance) {
   position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  min-width: 0;
 }
-.auth:global(.__wab_instance) {
+.button__o3BCq:global(.__wab_instance) {
+  max-width: 100%;
+}
+.svg__vYftN {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__a5O2N {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.button__srmMg:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
-.logo__ebYoT:global(.__wab_instance) {
+.svg__zfVZ {
   position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__uxDDh {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.button__p9H1D:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg___9R2Jl {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__nz24X {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
 }

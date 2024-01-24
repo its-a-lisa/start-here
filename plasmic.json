@@ -192,18 +192,73 @@
           "componentType": "component"
         },
         {
-          "id": "zKki6Od2JxD8",
+          "id": "sWar1oSBzZRT",
           "name": "HoldingSpace",
           "type": "managed",
           "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
           "renderModuleFilePath": "plasmic/start_here/PlasmicHoldingSpace.tsx",
           "importSpec": {
-            "modulePath": "../pages/holding-space.tsx"
+            "modulePath": "../pages/holiding-space.tsx"
           },
           "cssFilePath": "plasmic/start_here/PlasmicHoldingSpace.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/holding-space"
+          "path": "/holiding-space"
+        },
+        {
+          "id": "bchzmV_R7EgE",
+          "name": "ProtectedPage",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicProtectedPage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/protected-page.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicProtectedPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/protected-page"
+        },
+        {
+          "id": "I77fzhsyDgqz",
+          "name": "SignUp",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicSignUp.tsx",
+          "importSpec": {
+            "modulePath": "../pages/signup.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicSignUp.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/signup"
+        },
+        {
+          "id": "aWk_EbXAGcGs",
+          "name": "Login",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicLogin.tsx",
+          "importSpec": {
+            "modulePath": "../pages/login.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicLogin.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/login"
+        },
+        {
+          "id": "HsD9axl_NxPj",
+          "name": "SignoutButton",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicSignoutButton.tsx",
+          "importSpec": {
+            "modulePath": "SignoutButton.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicSignoutButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
