@@ -158,6 +158,7 @@ function PlasmicHoldingSpace__RenderFunc(props: {
               >
                 <Button
                   className={classNames("__wab_instance", sty.button__un0Eu)}
+                  link={`/protected-page`}
                 >
                   {"Go to Protect Page"}
                 </Button>

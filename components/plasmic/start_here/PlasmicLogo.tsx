@@ -54,7 +54,7 @@ type ArgPropType = keyof PlasmicLogo__ArgsType;
 export const PlasmicLogo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLogo__OverridesType = {
-  root?: p.Flex<"a"> & Partial<LinkProps>;
+  root?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
 };
 
@@ -94,23 +94,19 @@ function PlasmicLogo__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   return (
-    <p.PlasmicLink
+    <div
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
         projectcss.all,
-        projectcss.a,
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
         sty.root
       )}
-      component={Link}
-      href={`/`}
-      platform={"nextjs"}
     >
       <p.PlasmicImg
         data-plasmic-name={"img"}
@@ -128,7 +124,7 @@ function PlasmicLogo__RenderFunc(props: {
           "https://cdn.pixabay.com/photo/2016/11/05/20/09/grooming-1801287_1280.png"
         }
       />
-    </p.PlasmicLink>
+    </div>
   ) as React.ReactElement | null;
 }
 
@@ -140,7 +136,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "a";
+  root: "div";
   img: typeof p.PlasmicImg;
 };
 

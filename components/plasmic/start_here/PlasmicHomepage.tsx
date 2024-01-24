@@ -62,7 +62,6 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<typeof DefaultLayout>;
-  freeBox?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
 };
 
@@ -117,27 +116,58 @@ function PlasmicHomepage__RenderFunc(props: {
           data-plasmic-for-node={forNode}
           className={classNames("__wab_instance", sty.root)}
         >
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
-            <p.PlasmicImg
-              data-plasmic-name={"img"}
-              data-plasmic-override={overrides.img}
-              alt={""}
-              className={classNames(sty.img)}
-              displayHeight={"auto"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"100%"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"auto"}
-              loading={"lazy"}
-              src={
-                "https://cdn.pixabay.com/photo/2017/09/19/19/18/heart-2766277_1280.png"
-              }
-            />
+          <div className={classNames(projectcss.all, sty.freeBox__n9QEc)}>
+            <div className={classNames(projectcss.all, sty.freeBox__tvrkd)}>
+              <div className={classNames(projectcss.all, sty.freeBox__bFaqS)}>
+                <div className={classNames(projectcss.all, sty.freeBox__zRvYb)}>
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__rrZo6
+                    )}
+                    component={Link}
+                    href={`/protected-page`}
+                    platform={"nextjs"}
+                  >
+                    {"Protected Page"}
+                  </p.PlasmicLink>
+                </div>
+                <p.PlasmicImg
+                  data-plasmic-name={"img"}
+                  data-plasmic-override={overrides.img}
+                  alt={""}
+                  className={classNames(sty.img)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={
+                    "https://cdn.pixabay.com/photo/2017/09/19/19/18/heart-2766277_1280.png"
+                  }
+                />
+
+                <div className={classNames(projectcss.all, sty.freeBox__ryxqZ)}>
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__czv5
+                    )}
+                    component={Link}
+                    href={`/holiding-space`}
+                    platform={"nextjs"}
+                  >
+                    {"Holding Space"}
+                  </p.PlasmicLink>
+                </div>
+              </div>
+            </div>
           </div>
         </DefaultLayout>
       </div>
@@ -146,8 +176,7 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "img"],
-  freeBox: ["freeBox", "img"],
+  root: ["root", "img"],
   img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -155,7 +184,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: typeof DefaultLayout;
-  freeBox: "div";
   img: typeof p.PlasmicImg;
 };
 
@@ -219,7 +247,6 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
     img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicHomepage

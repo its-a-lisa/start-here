@@ -70,10 +70,6 @@
   width: auto;
   height: 1em;
 }
-.resources:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
 .freeBox__uc6Qp {
   display: flex;
   position: relative;

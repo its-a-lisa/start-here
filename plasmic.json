@@ -97,62 +97,6 @@
           "componentType": "component"
         },
         {
-          "id": "U7q-WXpwL8pf",
-          "name": "Select",
-          "type": "managed",
-          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
-          "renderModuleFilePath": "plasmic/start_here/PlasmicSelect.tsx",
-          "importSpec": {
-            "modulePath": "Select.tsx"
-          },
-          "cssFilePath": "plasmic/start_here/PlasmicSelect.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "select"
-        },
-        {
-          "id": "Jzo-vvCR8zTz",
-          "name": "Select__Option",
-          "type": "managed",
-          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
-          "renderModuleFilePath": "plasmic/start_here/PlasmicSelect__Option.tsx",
-          "importSpec": {
-            "modulePath": "Select__Option.tsx"
-          },
-          "cssFilePath": "plasmic/start_here/PlasmicSelect__Option.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "select-option"
-        },
-        {
-          "id": "RFSKUOk__sQM",
-          "name": "Select__OptionGroup",
-          "type": "managed",
-          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
-          "renderModuleFilePath": "plasmic/start_here/PlasmicSelect__OptionGroup.tsx",
-          "importSpec": {
-            "modulePath": "Select__OptionGroup.tsx"
-          },
-          "cssFilePath": "plasmic/start_here/PlasmicSelect__OptionGroup.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "select-option-group"
-        },
-        {
-          "id": "G0MDeaZlZ9R7",
-          "name": "Select__Overlay",
-          "type": "managed",
-          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
-          "renderModuleFilePath": "plasmic/start_here/PlasmicSelect__Overlay.tsx",
-          "importSpec": {
-            "modulePath": "Select__Overlay.tsx"
-          },
-          "cssFilePath": "plasmic/start_here/PlasmicSelect__Overlay.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "triggered-overlay"
-        },
-        {
           "id": "mWZvhL92Ok8N",
           "name": "Nav",
           "type": "managed",
