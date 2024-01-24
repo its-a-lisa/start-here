@@ -190,6 +190,20 @@
           "cssFilePath": "plasmic/start_here/PlasmicDefaultLayout.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "zKki6Od2JxD8",
+          "name": "HoldingSpace",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicHoldingSpace.tsx",
+          "importSpec": {
+            "modulePath": "../pages/holding-space.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicHoldingSpace.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/holding-space"
         }
       ],
       "icons": [
