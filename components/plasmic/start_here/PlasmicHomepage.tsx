@@ -36,10 +36,9 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Nav from "../../Nav"; // plasmic-import: mWZvhL92Ok8N/component
-import Logo from "../../Logo"; // plasmic-import: eqWxOKkmGwmo/component
+import DefaultLayout from "../../DefaultLayout"; // plasmic-import: A2d7WnFA90Fs/component
 import Auth from "../../Auth"; // plasmic-import: xA16lXqVu7N9/component
-import Footer from "../../Footer"; // plasmic-import: -v5Jl9daHi4w/component
+import Logo from "../../Logo"; // plasmic-import: eqWxOKkmGwmo/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -53,19 +52,14 @@ export type PlasmicHomepage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
 export const PlasmicHomepage__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicHomepage__ArgsType = {
-  brandLogo?: React.ReactNode;
-};
+export type PlasmicHomepage__ArgsType = {};
 type ArgPropType = keyof PlasmicHomepage__ArgsType;
-export const PlasmicHomepage__ArgProps = new Array<ArgPropType>("brandLogo");
+export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
-  root?: p.Flex<"div">;
-  nav?: p.Flex<typeof Nav>;
-  section?: p.Flex<"section">;
+  root?: p.Flex<typeof DefaultLayout>;
   h1?: p.Flex<"h1">;
   auth?: p.Flex<typeof Auth>;
-  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultHomepageProps {}
@@ -112,87 +106,56 @@ function PlasmicHomepage__RenderFunc(props: {
       `}</style>
 
       <div className={projectcss.plasmic_page_wrapper}>
-        <div
+        <DefaultLayout
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
-          className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            sty.root
-          )}
+          className={classNames("__wab_instance", sty.root)}
         >
-          <Nav
-            data-plasmic-name={"nav"}
-            data-plasmic-override={overrides.nav}
-            brandLogo={p.renderPlasmicSlot({
-              defaultContents: (
-                <Logo
-                  className={classNames("__wab_instance", sty.logo__zcZeS)}
-                />
-              ),
-
-              value: args.brandLogo
-            })}
-            className={classNames("__wab_instance", sty.nav)}
-          />
-
-          <section
-            data-plasmic-name={"section"}
-            data-plasmic-override={overrides.section}
-            className={classNames(projectcss.all, sty.section)}
-          >
-            <h1
-              data-plasmic-name={"h1"}
-              data-plasmic-override={overrides.h1}
-              className={classNames(
-                projectcss.all,
-                projectcss.h1,
-                projectcss.__wab_text,
-                sty.h1
-              )}
+          <div className={classNames(projectcss.all, sty.freeBox__n9QEc)}>
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__lVVgK)}
             >
-              {"Starter App"}
-            </h1>
-            <Auth
-              data-plasmic-name={"auth"}
-              data-plasmic-override={overrides.auth}
-              className={classNames("__wab_instance", sty.auth)}
-            />
-          </section>
-          <Footer
-            data-plasmic-name={"footer"}
-            data-plasmic-override={overrides.footer}
-            className={classNames("__wab_instance", sty.footer)}
-          />
-        </div>
+              <h1
+                data-plasmic-name={"h1"}
+                data-plasmic-override={overrides.h1}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1
+                )}
+              >
+                {"Start Here"}
+              </h1>
+              <Auth
+                data-plasmic-name={"auth"}
+                data-plasmic-override={overrides.auth}
+                className={classNames("__wab_instance", sty.auth)}
+              />
+            </p.Stack>
+          </div>
+        </DefaultLayout>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "nav", "section", "h1", "auth", "footer"],
-  nav: ["nav"],
-  section: ["section", "h1", "auth"],
+  root: ["root", "h1", "auth"],
   h1: ["h1"],
-  auth: ["auth"],
-  footer: ["footer"]
+  auth: ["auth"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "div";
-  nav: typeof Nav;
-  section: "section";
+  root: typeof DefaultLayout;
   h1: "h1";
   auth: typeof Auth;
-  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -255,11 +218,8 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    nav: makeNodeComponent("nav"),
-    section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
     auth: makeNodeComponent("auth"),
-    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

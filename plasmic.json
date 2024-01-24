@@ -177,6 +177,19 @@
           "cssFilePath": "plasmic/start_here/PlasmicFooter.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "A2d7WnFA90Fs",
+          "name": "DefaultLayout",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicDefaultLayout.tsx",
+          "importSpec": {
+            "modulePath": "DefaultLayout.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicDefaultLayout.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
