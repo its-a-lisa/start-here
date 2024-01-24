@@ -36,6 +36,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Auth from "../../Auth"; // plasmic-import: xA16lXqVu7N9/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -57,7 +58,7 @@ export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   section?: p.Flex<"section">;
   h1?: p.Flex<"h1">;
-  text?: p.Flex<"div">;
+  auth?: p.Flex<typeof Auth>;
 };
 
 export interface DefaultHomepageProps {}
@@ -135,34 +136,11 @@ function PlasmicHomepage__RenderFunc(props: {
             >
               {"Starter App"}
             </h1>
-            <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text
-              )}
-            >
-              <React.Fragment>
-                <React.Fragment>
-                  {
-                    "If you haven't already done so, go back and learn the basics by going through the Plasmic Levels tutorial.\n\nIt's always easier to start from examples! Add a new page using a template\u2014do this from the list of pages in the top toolbar.\n\nOr press the big blue + button to start inserting items into this page.\n\nIntegrate this project into your codebase\u2014press the "
-                  }
-                </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
-                >
-                  {"Code"}
-                </span>
-                <React.Fragment>
-                  {
-                    " button in the top right and follow the quickstart instructions.\n\nJoin our Slack community (icon in bottom left) for help any time."
-                  }
-                </React.Fragment>
-              </React.Fragment>
-            </div>
+            <Auth
+              data-plasmic-name={"auth"}
+              data-plasmic-override={overrides.auth}
+              className={classNames("__wab_instance", sty.auth)}
+            />
           </section>
         </div>
       </div>
@@ -171,10 +149,10 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "text"],
-  section: ["section", "h1", "text"],
+  root: ["root", "section", "h1", "auth"],
+  section: ["section", "h1", "auth"],
   h1: ["h1"],
-  text: ["text"]
+  auth: ["auth"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -183,7 +161,7 @@ type NodeDefaultElementType = {
   root: "div";
   section: "section";
   h1: "h1";
-  text: "div";
+  auth: typeof Auth;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -248,7 +226,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
-    text: makeNodeComponent("text"),
+    auth: makeNodeComponent("auth"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

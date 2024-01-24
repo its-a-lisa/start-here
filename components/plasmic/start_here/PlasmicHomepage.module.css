@@ -58,9 +58,6 @@
   margin-bottom: 32px;
   min-width: 0;
 }
-.text {
+.auth:global(.__wab_instance) {
   position: relative;
-  width: 100%;
-  height: auto;
-  min-width: 0;
 }

@@ -41,9 +41,66 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/"
+        },
+        {
+          "id": "DmOz5TzcbjbY",
+          "name": "TextInput",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicTextInput.tsx",
+          "importSpec": {
+            "modulePath": "TextInput.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicTextInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
+        },
+        {
+          "id": "KaXI-_rb8Hbz",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "xA16lXqVu7N9",
+          "name": "Auth",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicAuth.tsx",
+          "importSpec": {
+            "modulePath": "Auth.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicAuth.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
-      "icons": [],
+      "icons": [
+        {
+          "id": "FJzGDMAH2bam",
+          "name": "SearchsvgIcon",
+          "moduleFilePath": "plasmic/start_here/icons/PlasmicIcon__Searchsvg.tsx"
+        },
+        {
+          "id": "Rjr6r3-9QxlW",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/start_here/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "qWMN0DGk7j4M",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/start_here/icons/PlasmicIcon__Icon.tsx"
+        }
+      ],
       "images": [],
       "indirect": false,
       "globalContextsFilePath": "",
