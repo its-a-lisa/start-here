@@ -24,6 +24,12 @@
     grid-column: 4;
   }
 }
+.nav:global(.__wab_instance) {
+  position: relative;
+}
+.logo__zcZeS:global(.__wab_instance) {
+  position: relative;
+}
 .section {
   display: grid;
   position: relative;
@@ -60,4 +66,13 @@
 }
 .auth:global(.__wab_instance) {
   position: relative;
+}
+.footer:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.logo__zp4Dh:global(.__wab_instance) {
+  position: relative;
+  width: 56px;
+  height: 56px;
 }

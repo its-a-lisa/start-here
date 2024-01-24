@@ -82,6 +82,101 @@
           "cssFilePath": "plasmic/start_here/PlasmicAuth.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "eqWxOKkmGwmo",
+          "name": "Logo",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicLogo.tsx",
+          "importSpec": {
+            "modulePath": "Logo.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicLogo.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "U7q-WXpwL8pf",
+          "name": "Select",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicSelect.tsx",
+          "importSpec": {
+            "modulePath": "Select.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicSelect.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "select"
+        },
+        {
+          "id": "Jzo-vvCR8zTz",
+          "name": "Select__Option",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicSelect__Option.tsx",
+          "importSpec": {
+            "modulePath": "Select__Option.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicSelect__Option.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "select-option"
+        },
+        {
+          "id": "RFSKUOk__sQM",
+          "name": "Select__OptionGroup",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicSelect__OptionGroup.tsx",
+          "importSpec": {
+            "modulePath": "Select__OptionGroup.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicSelect__OptionGroup.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "select-option-group"
+        },
+        {
+          "id": "G0MDeaZlZ9R7",
+          "name": "Select__Overlay",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicSelect__Overlay.tsx",
+          "importSpec": {
+            "modulePath": "Select__Overlay.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicSelect__Overlay.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "triggered-overlay"
+        },
+        {
+          "id": "mWZvhL92Ok8N",
+          "name": "Nav",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicNav.tsx",
+          "importSpec": {
+            "modulePath": "Nav.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicNav.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "-v5Jl9daHi4w",
+          "name": "Footer",
+          "type": "managed",
+          "projectId": "c8HQ4QDrdFixJwisZHdvQZ",
+          "renderModuleFilePath": "plasmic/start_here/PlasmicFooter.tsx",
+          "importSpec": {
+            "modulePath": "Footer.tsx"
+          },
+          "cssFilePath": "plasmic/start_here/PlasmicFooter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -99,6 +194,16 @@
           "id": "qWMN0DGk7j4M",
           "name": "IconIcon",
           "moduleFilePath": "plasmic/start_here/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "9pk3duf9qDoB",
+          "name": "ChevronDownsvgIcon",
+          "moduleFilePath": "plasmic/start_here/icons/PlasmicIcon__ChevronDownsvg.tsx"
+        },
+        {
+          "id": "qxjluSiO9lzO",
+          "name": "ChevronUpsvgIcon",
+          "moduleFilePath": "plasmic/start_here/icons/PlasmicIcon__ChevronUpsvg.tsx"
         }
       ],
       "images": [],
