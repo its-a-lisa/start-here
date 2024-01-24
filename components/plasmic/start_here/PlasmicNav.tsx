@@ -38,7 +38,6 @@ import {
 } from "@plasmicapp/react-web";
 import Logo from "../../Logo"; // plasmic-import: eqWxOKkmGwmo/component
 import Button from "../../Button"; // plasmic-import: KaXI-_rb8Hbz/component
-import Select from "../../Select"; // plasmic-import: U7q-WXpwL8pf/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -77,7 +76,6 @@ export type PlasmicNav__OverridesType = {
   root?: p.Flex<"div">;
   navigationLinks?: p.Flex<"div">;
   home?: p.Flex<typeof Button>;
-  resources?: p.Flex<typeof Select>;
 };
 
 export interface DefaultNavProps {
@@ -122,12 +120,6 @@ function PlasmicNav__RenderFunc(props: {
 
   const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
-      {
-        path: "resources.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
       {
         path: "userState",
         type: "private",
@@ -195,88 +187,6 @@ function PlasmicNav__RenderFunc(props: {
           >
             {"Home"}
           </Button>
-          <Select
-            data-plasmic-name={"resources"}
-            data-plasmic-override={overrides.resources}
-            className={classNames("__wab_instance", sty.resources)}
-            onChange={async (...eventArgs: any) => {
-              ((...eventArgs) => {
-                p.generateStateOnChangeProp($state, ["resources", "value"])(
-                  eventArgs[0]
-                );
-              }).apply(null, eventArgs);
-              (async value => {
-                const $steps = {};
-
-                $steps["goToHoldingSpace"] =
-                  $state.resources.value == "holding"
-                    ? (() => {
-                        const actionArgs = { destination: `/holiding-space` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                if (
-                  $steps["goToHoldingSpace"] != null &&
-                  typeof $steps["goToHoldingSpace"] === "object" &&
-                  typeof $steps["goToHoldingSpace"].then === "function"
-                ) {
-                  $steps["goToHoldingSpace"] = await $steps["goToHoldingSpace"];
-                }
-
-                $steps["goToProtectedPage"] =
-                  $state.resources.value == "protected"
-                    ? (() => {
-                        const actionArgs = { destination: `/protected-page` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                if (
-                  $steps["goToProtectedPage"] != null &&
-                  typeof $steps["goToProtectedPage"] === "object" &&
-                  typeof $steps["goToProtectedPage"].then === "function"
-                ) {
-                  $steps["goToProtectedPage"] = await $steps[
-                    "goToProtectedPage"
-                  ];
-                }
-              }).apply(null, eventArgs);
-            }}
-            options={(() => {
-              const __composite = [
-                { value: null, label: null },
-                { value: null, label: null }
-              ];
-              __composite["0"]["value"] = "holding";
-              __composite["0"]["label"] = "Holding Page";
-              __composite["1"]["value"] = "protected";
-              __composite["1"]["label"] = "Protected";
-              return __composite;
-            })()}
-            placeholder={"Resources"}
-            value={p.generateStateValueProp($state, ["resources", "value"])}
-          />
         </p.Stack>
         <div className={classNames(projectcss.all, sty.freeBox__uc6Qp)}>
           {(
@@ -331,10 +241,9 @@ function PlasmicNav__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navigationLinks", "home", "resources"],
-  navigationLinks: ["navigationLinks", "home", "resources"],
-  home: ["home"],
-  resources: ["resources"]
+  root: ["root", "navigationLinks", "home"],
+  navigationLinks: ["navigationLinks", "home"],
+  home: ["home"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -343,7 +252,6 @@ type NodeDefaultElementType = {
   root: "div";
   navigationLinks: "div";
   home: typeof Button;
-  resources: typeof Select;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -408,7 +316,6 @@ export const PlasmicNav = Object.assign(
     // Helper components rendering sub-elements
     navigationLinks: makeNodeComponent("navigationLinks"),
     home: makeNodeComponent("home"),
-    resources: makeNodeComponent("resources"),
 
     // Metadata about props expected for PlasmicNav
     internalVariantProps: PlasmicNav__VariantProps,
